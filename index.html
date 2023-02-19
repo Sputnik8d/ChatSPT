@@ -44,7 +44,7 @@
             <p id="par">ChatSPT</p>
             <div id="terminal"> #Hello! Feel free to ask anythig.            
             </div>
-        <input type="text" id="userInput" style="width: 600px; height: 30px">
+        <input type="text" id="userInput" style="width: 600px; height: 30px" placeholder="Ask me!">
         </div>
         <script>
             let terminal = document.getElementById('terminal');
@@ -54,6 +54,7 @@
                 if (e.keyCode === 13) {
                     temporary = '<br>' + "#" + userInput.value;
                     userInput.value = '';
+                    document.getElementById('userInput').placeholder="";
                     terminal.innerHTML += temporary;
                     setTimeout(function(){
                         terminal.innerHTML += "<br>" + "Unfortunately, I cannot answer your question as it violates our terms of use.";
